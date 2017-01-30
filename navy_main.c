@@ -5,24 +5,27 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Mon Jan 30 17:06:57 2017 Thomas DEBRAND PASSARD
-** Last update Mon Jan 30 17:30:50 2017 Thomas DEBRAND PASSARD
+** Last update Mon Jan 30 18:54:44 2017 Thomas DEBRAND PASSARD
 */
 
 #include "include/my.h"
 
-void	main(int ac, char **av)
+int	main(int ac, char **av)
 {
   check_help(ac, av);
+  return (0);
 }
 
 int	check_help(int ac, char **av)
 {
+  if (ac == 1)
+    return (0);
   if (av[1][0] == '-' && av[1][1] == 'h' && av[1][2] == '\0')
     {
       my_putstr("USAGE\n");
       my_putstr("\t./navy [first_player_pid] navy_positions\n\n");
       my_putstr("DESCRIPTION\n");
-      my_putstr("\tfirst_player_pid    only for the 2nd player.  pid of the first player,\n");
+      my_putstr("\tfirst_player_pid    only for the 2nd player.  pid of the first player.\n");
       my_putstr("\tnavy_positions      file representing the positions of the ships.\n");
     }
   return (0);
