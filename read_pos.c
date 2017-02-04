@@ -5,12 +5,12 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Thu Feb  2 14:29:12 2017 Thomas DEBRAND PASSARD
+** Last update Sat Feb  4 16:57:20 2017 Thomas DEBRAND PASSARD
 */
 
 #include "include/my.h"
 
-int	folder_to_array(int ac, char **av)
+int	folder_to_array(char **av, t_tool *tool)
 {
   char	*array;
   char	buff[1];
@@ -33,10 +33,10 @@ int	folder_to_array(int ac, char **av)
 	  index++;
 	}
     }
-  array_to_wordtab(ac, av, array);
+  array_to_wordtab(av, array, tool);
 }
 
-int	array_to_wordtab(int ac, char **av, char *array)
+int	array_to_wordtab(char **av, char *array, t_tool *tool)
 {
   int	x = 0;
   int	y = 0;
@@ -57,10 +57,10 @@ int	array_to_wordtab(int ac, char **av, char *array)
       y++;
       i++;
     }
-  check_boat_len1(ac, av, pos1);
+  check_boat_len1(av, pos1, tool);
 }
 
-int	check_boat_len1(int ac, char **av, char **pos1)
+int	check_boat_len1(char **av, char **pos1, t_tool *tool)
 {
   int	x = 0;
   int	i = 0;
@@ -79,11 +79,10 @@ int	check_boat_len1(int ac, char **av, char **pos1)
 	  i++;
 	}
     }
-  //  my_putstr("1st step clear\n");
-  check_boat_len2(ac, av, pos1);
+  check_boat_len2(av, pos1, tool);
 }
 
-int	check_boat_len2(int ac, char **av, char **pos1)
+int	check_boat_len2(char **av, char **pos1, t_tool *tool)
 {
   int	index = 0;
   int	index1 = 1;
@@ -113,30 +112,9 @@ int	check_boat_len2(int ac, char **av, char **pos1)
 	  my_putstr("The boat is too long or too short\n");
 	  return (84);
 	}
-      // else
-      //my_putstr("Allright\n");
       index1 += 3;
       index2 += 3;
       index += 3;
     }
-  //my_putchar(pos1[1][0]);
-  //my_put_nbr(pos1[1][0]);
-  put_in_map(pos1);
+  create_map(pos1, tool);
 }
-
-/* int	check_order(int ac, char **av, char **pos1) */
-/* { */
-/*   int	x = 1; */
-/*   int	y = 0; */
-/*   int	index = 0; */
-/*   int	save; */
-
-/*   while (index != 4) */
-/*     { */
-/*       if (((pos1[x][y] && pos1[x + 1][y]) >= '0') || ((pos1[x][y] && pos1[x + 1][y]) <= '9')) */
-/* 	{ */
-/* 	  if (((pos1[x][y + 1] && pos1[x + 1][y + 1]) */
-/* 	} */
-/*       index++; */
-/*     } */
-/* } */

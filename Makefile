@@ -5,7 +5,7 @@
 ## Login   <tdebrand@epitech.net>
 ## 
 ## Started on  Mon Dec 12 10:16:49 2016 Thomas DEBRAND PASSARD
-## Last update Thu Feb  2 14:24:42 2017 Thomas DEBRAND PASSARD
+## Last update Sat Feb  4 17:15:39 2017 Thomas DEBRAND PASSARD
 ##
 
 NAME	= navy
@@ -15,7 +15,8 @@ SRC	= lib/my/my_putchar.c	\
 	  lib/my/my_putstr.c	\
 	  navy_main.c		\
 	  read_pos.c		\
-	  navy_superpo.c
+	  navy_superpo.c	\
+	  putine.c
 
 OBJ	= $(SRC:.c=.o)
 

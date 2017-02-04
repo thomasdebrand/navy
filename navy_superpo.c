@@ -5,40 +5,72 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Thu Feb  2 13:26:10 2017 Thomas DEBRAND PASSARD
-** Last update Thu Feb  2 14:39:20 2017 Thomas DEBRAND PASSARD
+** Last update Sat Feb  4 17:39:29 2017 Thomas DEBRAND PASSARD
 */
 
 #include "include/my.h"
 
-void	put_in_map(char **pos1)
+void	create_map(char **pos1, t_tool *tool)
 {
-  int	index = 0;
-  int	x = 0;
-  int	y = 0;
-  int	xpos = 0;
-  int	ypos = 0;
   char	**map;
-
+  int	x = 0;
+  
   map = malloc(sizeof(char*) * 9);
   while(x != 9)
     {
       map[x] = malloc(sizeof(char) * 9);
       x++;
     }
-  x = 0;
-  while (index != 14)
+  full_the_map(map, tool);
+  put_in_map1(map, pos1, tool);
+  print_the_map(map, tool);
+}
+
+void	print_the_map(char **map, t_tool *tool)
+{
+  int   x = 0;
+  int   y = 0;
+  int	c = 49;
+
+  my_putstr("my_positions:\n |A B C D E F G H\n");
+  my_putstr("-+---------------\n");
+  my_putchar(c);
+  my_putchar('|');
+  while (x != 7 || y != 8)
     {
-      while (index % 2 != 0)
+      if (y == 8)
 	{
-	  map[pos1[x + 1][y] - 65][pos1[x + 1][y + 1]] = pos1[xpos][ypos];
 	  x++;
-	  y++;
-	  index++;
+	  y = 0;
+	  my_putchar('\n');
+	  my_putchar(++c);
+	  my_putchar('|');
 	}
-      xpos += 3;
-      ypos += 3;
-      index++;
+      my_putchar(map[x][y++]);
+      my_putchar(' ');
     }
-  my_put_nbr(pos1[x + 1][y] - 65);
-  my_putchar(map[pos1[x + 1][y] - 65][pos1[x + 1][y + 1]]);
+  my_putchar('\n');
+}
+
+int	print_error()
+{
+  my_putstr("Il y a une erreur\n");
+  return (84);
+}
+
+void	full_the_map(char **map, t_tool *tool)
+{
+  int	x = 0;
+  int	y = 0;
+  
+  while (x != 7 || y != 8)
+    {
+      if (y == 8)
+	{
+	  x++;
+	  y = 0;
+	}
+      map[x][y] = '.';
+      y++;
+    }
 }
