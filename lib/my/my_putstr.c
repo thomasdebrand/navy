@@ -5,11 +5,11 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Tue Oct 25 22:39:43 2016 Thomas DEBRAND PASSARD
-** Last update Mon Jan 30 17:20:40 2017 Thomas DEBRAND PASSARD
+** Last update Wed Feb  8 17:03:39 2017 Thomas DEBRAND PASSARD
 */
 
 #include <unistd.h>
-#include "include/my.h"
+#include "my.h"
 
 void	my_putstr(char *str)
 {

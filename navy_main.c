@@ -5,18 +5,17 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Mon Jan 30 17:06:57 2017 Thomas DEBRAND PASSARD
-** Last update Sat Feb  4 17:23:14 2017 Thomas DEBRAND PASSARD
+** Last update Sun Feb 12 15:02:37 2017 Thomas DEBRAND PASSARD
 */
 
-#include "include/my.h"
+#include "my.h"
 
 int	main(int ac, char **av)
 {
   t_tool	tool;
 
-  //tool = malloc(sizeof(t_tool));
   check_help(ac, av);
-  folder_to_array(av, &tool);
+  folder_to_array(ac, av, &tool);
   return (0);
 }
 

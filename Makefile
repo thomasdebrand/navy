@@ -5,7 +5,7 @@
 ## Login   <tdebrand@epitech.net>
 ## 
 ## Started on  Mon Dec 12 10:16:49 2016 Thomas DEBRAND PASSARD
-## Last update Sat Feb  4 17:15:39 2017 Thomas DEBRAND PASSARD
+## Last update Thu Feb  9 16:17:08 2017 Thomas DEBRAND PASSARD
 ##
 
 NAME	= navy
@@ -27,7 +27,7 @@ RM	= rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -W -Wextra $(OBJ) -o $(NAME)
+	$(CC) -I. -W -Wextra $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

@@ -5,11 +5,11 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Tue Oct 25 22:26:00 2016 Thomas DEBRAND PASSARD
-** Last update Wed Dec 14 10:30:51 2016 Thomas DEBRAND PASSARD
+** Last update Wed Feb  8 17:03:28 2017 Thomas DEBRAND PASSARD
 */
 
 #include <stdlib.h>
-#include "include/my.h"
+#include "my.h"
 
 int	my_put_nbr(int nb)
 {

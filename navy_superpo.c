@@ -5,12 +5,12 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Thu Feb  2 13:26:10 2017 Thomas DEBRAND PASSARD
-** Last update Sat Feb  4 17:39:29 2017 Thomas DEBRAND PASSARD
+** Last update Sun Feb 12 15:05:39 2017 Thomas DEBRAND PASSARD
 */
 
-#include "include/my.h"
+#include "my.h"
 
-void	create_map(char **pos1, t_tool *tool)
+void	create_map(int ac, t_tool *tool)
 {
   char	**map;
   int	x = 0;
@@ -21,18 +21,18 @@ void	create_map(char **pos1, t_tool *tool)
       map[x] = malloc(sizeof(char) * 9);
       x++;
     }
-  full_the_map(map, tool);
-  put_in_map1(map, pos1, tool);
-  print_the_map(map, tool);
+  full_the_map(ac, map, tool);
+  put_in_map1(ac, map, tool);
+  print_the_map(map);
 }
 
-void	print_the_map(char **map, t_tool *tool)
+void	print_the_map(char **map)
 {
   int   x = 0;
   int   y = 0;
   int	c = 49;
 
-  my_putstr("my_positions:\n |A B C D E F G H\n");
+  my_putstr("my positions:\n |A B C D E F G H\n");
   my_putstr("-+---------------\n");
   my_putchar(c);
   my_putchar('|');
@@ -58,7 +58,7 @@ int	print_error()
   return (84);
 }
 
-void	full_the_map(char **map, t_tool *tool)
+void	full_the_map(int ac, char **map, t_tool *tool)
 {
   int	x = 0;
   int	y = 0;

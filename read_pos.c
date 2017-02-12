@@ -5,12 +5,12 @@
 ** Login   <tdebrand@epitech.net>
 ** 
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Sat Feb  4 16:57:20 2017 Thomas DEBRAND PASSARD
+** Last update Sun Feb 12 15:05:11 2017 Thomas DEBRAND PASSARD
 */
 
-#include "include/my.h"
+#include "my.h"
 
-int	folder_to_array(char **av, t_tool *tool)
+int	folder_to_array(int ac, char **av, t_tool *tool)
 {
   char	*array;
   char	buff[1];
@@ -33,23 +33,22 @@ int	folder_to_array(char **av, t_tool *tool)
 	  index++;
 	}
     }
-  array_to_wordtab(av, array, tool);
+  array_to_wordtab(ac, av, array, tool);
 }
 
-int	array_to_wordtab(char **av, char *array, t_tool *tool)
+int	array_to_wordtab(int ac, char **av, char *array, t_tool *tool)
 {
   int	x = 0;
   int	y = 0;
   int	i = 0;
-  char	**pos1;
 
-  pos1 = malloc(sizeof(char*) * 12);
+  tool->pos1 = malloc(sizeof(char*) * 12);
   while (array[i] != '\0')
     {
-      pos1[y] = malloc(sizeof(char) * 3);
+      tool->pos1[y] = malloc(sizeof(char) * 3);
       while (array[i] != ':' && array[i] != '\n')
 	{
-	  pos1[y][x] = array[i];
+	  tool->pos1[y][x] = array[i];
 	  x++;
 	  i++;
 	}
@@ -57,19 +56,43 @@ int	array_to_wordtab(char **av, char *array, t_tool *tool)
       y++;
       i++;
     }
-  check_boat_len1(av, pos1, tool);
+  swap(ac, tool);
+  check_boat_len1(ac, av, tool);
 }
 
-int	check_boat_len1(char **av, char **pos1, t_tool *tool)
+int	swap(int ac, t_tool *tool)
+{
+  int	x = 1;
+  int	y = 0;
+  int	index;
+  int	boucle = 0;
+
+  while (boucle != 8)
+    {
+      if (tool->pos1[x][y] < tool->pos1[x][y + 1])
+	{
+	  index = tool->pos1[x][y];
+	  tool->pos1[x][y] = tool->pos1[x][y + 1];
+	  tool->pos1[x][y + 1] = index;
+	}
+      if (boucle % 2 != 0)
+	x = x + 2;
+      else
+	x++;
+      boucle++;
+    }
+}
+
+int	check_boat_len1(int ac, char **av, t_tool *tool)
 {
   int	x = 0;
   int	i = 0;
 
   while (i != 4)
     {
-      if (pos1[x][0] > 53 || pos1[x][0] < 50)
+      if (tool->pos1[x][0] > 53 || tool->pos1[x][0] < 50)
 	{
-	  my_put_nbr(pos1[x][0]);
+	  my_put_nbr(tool->pos1[x][0]);
 	  my_putstr("Wrong size of boat. Please enter a size between 2 and 5.\n");
 	  return (84);
 	}
@@ -79,10 +102,10 @@ int	check_boat_len1(char **av, char **pos1, t_tool *tool)
 	  i++;
 	}
     }
-  check_boat_len2(av, pos1, tool);
+  check_boat_len2(ac, av, tool);
 }
 
-int	check_boat_len2(char **av, char **pos1, t_tool *tool)
+int	check_boat_len2(int ac, char **av, t_tool *tool)
 {
   int	index = 0;
   int	index1 = 1;
@@ -93,8 +116,8 @@ int	check_boat_len2(char **av, char **pos1, t_tool *tool)
   
   while (i++ != 4)
     {
-      value1 = pos1[index1][0] - pos1[index2][0];
-      value2 = pos1[index1][1] - pos1[index2][1];
+      value1 = tool->pos1[index1][0] - tool->pos1[index2][0];
+      value2 = tool->pos1[index1][1] - tool->pos1[index2][1];
       if (value1 < 0 || value2 < 0)
 	{
 	  value1 = value1 * -1;
@@ -107,7 +130,7 @@ int	check_boat_len2(char **av, char **pos1, t_tool *tool)
 	  my_putstr("The boat is in diagonal or is 1x1\n");
 	  return (84);
 	}
-      else if ((value1 + 1 != pos1[index][0]) && (value2 + 1 != pos1[index][0]))
+      else if ((value1 + 1 != tool->pos1[index][0]) && (value2 + 1 != tool->pos1[index][0]))
 	{
 	  my_putstr("The boat is too long or too short\n");
 	  return (84);
@@ -116,5 +139,5 @@ int	check_boat_len2(char **av, char **pos1, t_tool *tool)
       index2 += 3;
       index += 3;
     }
-  create_map(pos1, tool);
+  create_map(ac, tool);
 }
