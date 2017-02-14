@@ -5,17 +5,18 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Fri Feb  3 11:32:34 2017 Raphael Legrand
-** Last update Sun Feb 12 16:05:49 2017 Raphael Legrand
+** Last update Tue Feb 14 13:13:19 2017 Thomas DEBRAND PASSARD
 */
 
 #include "my.h"
 
-void		tour(int ac, char **map)
+void		tour(int ac, char **map, char **map_e)
 {
   while (1)
     {
       my_putchar('\n');
       print_the_map(map);
+      print_e_map(map_e);
       if (ac == 2)
 	{
 	  get_posi(ac);

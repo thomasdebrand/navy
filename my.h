@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Dec 12 09:54:55 2016 Thomas DEBRAND PASSARD
-** Last update Sun Feb 12 16:05:57 2017 Raphael Legrand
+** Last update Tue Feb 14 13:16:57 2017 Thomas DEBRAND PASSARD
 */
 
 #include <unistd.h>
@@ -41,16 +41,17 @@ int	check_boat_len2(int, char **, t_tool *);
 
 void	create_map(int, t_tool *);
 void	print_the_map(char **);
-void	full_the_map(int, char **, t_tool *);
+void	print_e_map(char **);
+void	full_the_map(int, char **, t_tool *, char **);
 int	print_error();
 
 int	put_in_map1(int, char **, t_tool *);
 int	put_in_map2(int, char **, t_tool *, int);
 
 void		my_putchar(char);
-void		my_putstr(char*);
+void		my_putstr(char *);
 void		my_put_nbr(int);
-int			my_getnbr(char*);
+int		my_getnbr(char *);
 void		handler2(int);
 void		hit(int);
 void		miss(int);
@@ -58,10 +59,10 @@ void		none(int);
 char		*get_next_line(int fd);
 void		listenner();
 void		answer();
-void		check(char**);
-void		send(int, char*);
+void		check(char **);
+void		send(int, char *);
 void		get_posi(int);
-void		tour(int, char**);
+void		tour(int, char **, char **);
 void		P2pid(int, siginfo_t*, void*);
 
 int		  globale[6];
