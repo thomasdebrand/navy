@@ -1,23 +1,14 @@
 /*
 ** navy_main.c for  in /home/tdebrand/PSU_2016_navy
-** 
+**
 ** Made by Thomas DEBRAND PASSARD
 ** Login   <tdebrand@epitech.net>
-** 
+**
 ** Started on  Mon Jan 30 17:06:57 2017 Thomas DEBRAND PASSARD
-** Last update Sun Feb 12 15:02:37 2017 Thomas DEBRAND PASSARD
+** Last update Sun Feb 12 15:32:32 2017 Raphael Legrand
 */
 
 #include "my.h"
-
-int	main(int ac, char **av)
-{
-  t_tool	tool;
-
-  check_help(ac, av);
-  folder_to_array(ac, av, &tool);
-  return (0);
-}
 
 int	check_help(int ac, char **av)
 {

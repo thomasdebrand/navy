@@ -1,11 +1,11 @@
 /*
 ** read_pos.c for  in /home/tdebrand/PSU_2016_navy
-** 
+**
 ** Made by Thomas DEBRAND PASSARD
 ** Login   <tdebrand@epitech.net>
-** 
+**
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Sun Feb 12 15:05:11 2017 Thomas DEBRAND PASSARD
+** Last update Sun Feb 12 15:41:44 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -18,8 +18,11 @@ int	folder_to_array(int ac, char **av, t_tool *tool)
   int	j;
   int	index = 0;
   int	size_malloc = 0;
+  int	k = 1;
 
-  if ((f = open(av[1], 'r')) == -1)
+  if (ac == 3)
+    k = 2;
+  if ((f = open(av[k], 'r')) == -1)
     {
       my_putstr("ERROR, no such file.\n");
       return (84);
@@ -113,7 +116,7 @@ int	check_boat_len2(int ac, char **av, t_tool *tool)
   int	value1 = 0;
   int	value2 = 0;
   int	i = 0;
-  
+
   while (i++ != 4)
     {
       value1 = tool->pos1[index1][0] - tool->pos1[index2][0];
