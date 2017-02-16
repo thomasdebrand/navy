@@ -5,7 +5,7 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Wed Feb  1 14:15:59 2017 Raphael Legrand
-** Last update Sun Feb 12 12:58:16 2017 Raphael Legrand
+** Last update Thu Feb 16 11:21:00 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -54,6 +54,8 @@ void		send(int pid, char *s)
       i = 0;
       n++;
     }
+  globale[4] = s[0];
+  globale[5] = s[1];
   my_putstr(s);
 }
 

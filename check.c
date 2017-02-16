@@ -5,7 +5,7 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Feb  4 16:11:43 2017 Raphael Legrand
-** Last update Sun Feb 12 16:29:43 2017 Raphael Legrand
+** Last update Thu Feb 16 11:22:22 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -23,7 +23,6 @@ void				check(char** posi)
       if (globale[3] == 0)
 	kill(globale[2], 10);
       posi[pos_l][pos_c] = 'x';
-      //enemy[pos_l + 2][pos_c * 2] = 'x';
     }
   else
     {
@@ -33,23 +32,29 @@ void				check(char** posi)
       if (globale[3] == 0)
 	kill(globale[2], 12);
       posi[pos_l][pos_c] = 'o';
-      //enemy[pos_l + 2][pos_c * 2] = 'o';
     }
 }
 
 void		miss(int sig)
 {
   my_putstr(":  missed\n");
+  globale[6] = 1;
 }
 
 void		hit(int sig)
 {
   my_putstr(":  hit\n");
+  globale[6] = 2;
+
 }
 
-void				answer()
+void				answer(char **enemy)
 {
   signal(12, miss);
   signal(10, hit);
   pause();
+  if (globale[6] == 1)
+    enemy[globale[5] - 49][globale[4] - 65] = 'o';
+  if (globale[6] == 2)
+    enemy[globale[5] - 49][globale[4] - 65] = 'x';
 }

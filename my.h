@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Dec 12 09:54:55 2016 Thomas DEBRAND PASSARD
-** Last update Tue Feb 14 13:16:57 2017 Thomas DEBRAND PASSARD
+** Last update Thu Feb 16 11:14:23 2017 Raphael Legrand
 */
 
 #include <unistd.h>
@@ -58,7 +58,7 @@ void		miss(int);
 void		none(int);
 char		*get_next_line(int fd);
 void		listenner();
-void		answer();
+void		answer(char**);
 void		check(char **);
 void		send(int, char *);
 void		get_posi(int);

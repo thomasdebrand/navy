@@ -5,7 +5,7 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Fri Feb  3 11:32:34 2017 Raphael Legrand
-** Last update Tue Feb 14 13:13:19 2017 Thomas DEBRAND PASSARD
+** Last update Thu Feb 16 11:14:09 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -20,7 +20,7 @@ void		tour(int ac, char **map, char **map_e)
       if (ac == 2)
 	{
 	  get_posi(ac);
-	  answer();
+	  answer(map_e);
 	  listenner();
 	  check(map);
 	}
@@ -29,7 +29,7 @@ void		tour(int ac, char **map, char **map_e)
 	  listenner();
 	  check(map);
 	  get_posi(ac);
-	  answer();
+	  answer(map_e);
 	}
     }
 }
