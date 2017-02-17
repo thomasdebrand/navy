@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Dec 12 09:54:55 2016 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 14:16:04 2017 Raphael Legrand
+** Last update Fri Feb 17 17:02:56 2017 Raphael Legrand
 */
 
 #include <unistd.h>
@@ -44,7 +44,6 @@ void	create_map(int, t_tool *);
 void	print_the_map(char **);
 void	print_e_map(char **);
 void	full_the_map(int, char **, t_tool *, char **);
-int	print_error();
 
 int	put_in_map1(int, char **, t_tool *);
 int	put_in_map2(int, char **, t_tool *, int);

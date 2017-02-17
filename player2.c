@@ -5,7 +5,7 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Wed Feb  1 14:15:59 2017 Raphael Legrand
-** Last update Fri Feb 17 15:28:38 2017 Raphael Legrand
+** Last update Fri Feb 17 16:34:25 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -34,7 +34,7 @@ void		get_posi(int ac)
 void		send(int pid, char *s)
 {
   int		lettre;
-  int		i = 0;
+  int		i = -1;
   int		n = 0;
 
   signal(12, none);
@@ -45,14 +45,13 @@ void		send(int pid, char *s)
 	lettre = s[n] - 64;
       if (s[n] > 48 && s[n] < 57)
 	lettre = s[n] - 48;
-      while (i != lettre)
+      while (++i != lettre)
 	{
 	  kill(pid, 10);
 	  pause();
-	  i++;
 	}
       kill(pid, 12);
-      i = 0;
+      i = -1;
       n++;
     }
   globale[4] = s[0];

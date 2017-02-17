@@ -1,11 +1,11 @@
 /*
 ** putine.c for  in /home/tdebrand/PSU_2016_navy
-** 
+**
 ** Made by Thomas DEBRAND PASSARD
 ** Login   <tdebrand@epitech.net>
-** 
+**
 ** Started on  Sat Feb  4 17:06:03 2017 Thomas DEBRAND PASSARD
-** Last update Sun Feb 12 15:10:25 2017 Thomas DEBRAND PASSARD
+** Last update Fri Feb 17 17:02:34 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -37,7 +37,7 @@ int	put_in_map2(int ac, char **map, t_tool *tool, int index)
     while (tool->value3 != tool->value4 + 1)
       {
 	if (map[tool->value3 - 1][tool->value1] != '.')
-	  print_error();
+	  return (84);
 	map[tool->value3 - 1][tool->value1] = index + 48;
 	tool->value3++;
       }
@@ -45,7 +45,7 @@ int	put_in_map2(int ac, char **map, t_tool *tool, int index)
     while (tool->value1 != tool->value2 + 1)
       {
 	if (map[tool->value3 - 1][tool->value1] != '.')
-	  print_error();
+	  return (84);
 	map[tool->value3 - 1][tool->value1] = index + 48;
 	tool->value1++;
       }

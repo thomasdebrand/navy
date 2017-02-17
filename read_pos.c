@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 15:16:14 2017 Raphael Legrand
+** Last update Fri Feb 17 16:39:48 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -113,12 +113,10 @@ int	check_boat_len2(int ac, char **av, t_tool *tool)
   int	value2 = 0;
   int	i = 0;
 
-  while (i++ != 4)
-    {
+    while (i++ != 4) {
       value1 = tool->pos1[index1][0] - tool->pos1[index2][0];
       value2 = tool->pos1[index1][1] - tool->pos1[index2][1];
-      if (value1 < 0 || value2 < 0)
-	{
+	if (value1 < 0 || value2 < 0) {
 	  value1 = value1 * -1;
 	  value2 = value2 * -1;
 	}

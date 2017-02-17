@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Thu Feb  2 13:26:10 2017 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 14:15:22 2017 Raphael Legrand
+** Last update Fri Feb 17 17:02:43 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -81,12 +81,6 @@ void	print_e_map(char **map_e)
     }
   my_putchar('\n');
   my_putchar('\n');
-}
-
-int	print_error()
-{
-  my_putstr("Il y a une erreur\n");
-  return (84);
 }
 
 void	full_the_map(int ac, char **map, t_tool *tool, char **map_e)
