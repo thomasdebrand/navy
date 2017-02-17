@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Jan 30 17:06:57 2017 Thomas DEBRAND PASSARD
-** Last update Sun Feb 12 15:32:32 2017 Raphael Legrand
+** Last update Fri Feb 17 14:25:26 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -13,7 +13,7 @@
 int	check_help(int ac, char **av)
 {
   if (ac == 1)
-    return (0);
+    return (1);
   if (av[1][0] == '-' && av[1][1] == 'h' && av[1][2] == '\0')
     {
       my_putstr("USAGE\n");
@@ -21,6 +21,6 @@ int	check_help(int ac, char **av)
       my_putstr("DESCRIPTION\n");
       my_putstr("\tfirst_player_pid    only for the 2nd player.  pid of the first player.\n");
       my_putstr("\tnavy_positions      file representing the positions of the ships.\n");
+      return (0);
     }
-  return (0);
 }

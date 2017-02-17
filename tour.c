@@ -5,14 +5,14 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Fri Feb  3 11:32:34 2017 Raphael Legrand
-** Last update Fri Feb 17 13:18:22 2017 Raphael Legrand
+** Last update Fri Feb 17 14:22:41 2017 Raphael Legrand
 */
 
 #include "my.h"
 
 void		tour(int ac, char **map, char **map_e)
 {
-  while (globale[7] != 0 || globale[8] != 14)
+  while (globale[7] != 0 && globale[8] != 14)
     {
       print_the_map(map);
       print_e_map(map_e);
@@ -30,11 +30,13 @@ void		tour(int ac, char **map, char **map_e)
 	  get_posi(ac);
 	  answer(map_e);
 	}
-      if (globale[8] == 14)
-	my_putstr("I won\n");
-      if (globale[7] == 0)
-	my_putstr("Enemy won\n");
     }
+  print_the_map(map);
+  print_e_map(map_e);
+  if (globale[8] == 14)
+    my_putstr("I won\n");
+  if (globale[7] == 0)
+    my_putstr("Enemy won\n");
 }
 
 void		P2pid(int sig, siginfo_t *siginfo, void *context)
@@ -43,11 +45,8 @@ void		P2pid(int sig, siginfo_t *siginfo, void *context)
   my_putstr("enemy connected\n\n");
 }
 
-int			main(int ac, char **av)
+void		connexion(int	ac, char **map, char **e_map, t_tool *tool)
 {
-  globale[8] = 0;
-  globale[7] = 14;
-  t_tool		tool;
   pid_t pid = getpid();
   my_putstr("my_pid:  ");
   my_put_nbr(pid);
@@ -63,11 +62,22 @@ int			main(int ac, char **av)
     }
   if (ac == 3)
     {
-      if ((kill(my_getnbr(av[1]), 10)) != -1)
+      if ((kill(my_getnbr(tool->pid), 10)) != -1)
 	my_putstr("successfully connected\n\n");
-      globale[2] = my_getnbr(av[1]);
+      globale[2] = my_getnbr(tool->pid);
     }
-  check_help(ac, av);
+  tour(ac, map, e_map);
+}
+
+int			main(int ac, char **av)
+{
+  if (check_help(ac, av) == 0)
+    return (0);
+  globale[7] = 14;
+  globale[8] = 0;
+  t_tool		tool;
+  if (ac == 3)
+    tool.pid = av[1];
   folder_to_array(ac, av, &tool);
   return (0);
 }

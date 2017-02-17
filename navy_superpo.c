@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Thu Feb  2 13:26:10 2017 Thomas DEBRAND PASSARD
-** Last update Tue Feb 14 13:20:21 2017 Thomas DEBRAND PASSARD
+** Last update Fri Feb 17 14:15:22 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -26,7 +26,7 @@ void	create_map(int ac, t_tool *tool)
     }
   full_the_map(ac, map, tool, map_e);
   put_in_map1(ac, map, tool);
-  tour(ac, map, map_e);
+  connexion(ac, map, map_e, tool);
 }
 
 void	print_the_map(char **map)

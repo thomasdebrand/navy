@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Sun Feb 12 15:41:44 2017 Raphael Legrand
+** Last update Fri Feb 17 14:29:57 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -94,11 +94,7 @@ int	check_boat_len1(int ac, char **av, t_tool *tool)
   while (i != 4)
     {
       if (tool->pos1[x][0] > 53 || tool->pos1[x][0] < 50)
-	{
-	  my_put_nbr(tool->pos1[x][0]);
-	  my_putstr("Wrong size of boat. Please enter a size between 2 and 5.\n");
-	  return (84);
-	}
+	return (84);
       else
 	{
 	  x = x + 3;
@@ -129,15 +125,9 @@ int	check_boat_len2(int ac, char **av, t_tool *tool)
       value1 = value1 + 48;
       value2 = value2 + 48;
       if ((value1 == '0' && value2 == '0') || (value1 != '0' && value2 != '0'))
-	{
-	  my_putstr("The boat is in diagonal or is 1x1\n");
-	  return (84);
-	}
+	return (84);
       else if ((value1 + 1 != tool->pos1[index][0]) && (value2 + 1 != tool->pos1[index][0]))
-	{
-	  my_putstr("The boat is too long or too short\n");
-	  return (84);
-	}
+	return (84);
       index1 += 3;
       index2 += 3;
       index += 3;

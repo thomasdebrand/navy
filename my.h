@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Dec 12 09:54:55 2016 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 11:54:41 2017 Raphael Legrand
+** Last update Fri Feb 17 14:16:04 2017 Raphael Legrand
 */
 
 #include <unistd.h>
@@ -29,6 +29,7 @@ typedef struct	s_tool
   char	**pos1;
   char	**pos2;
   char	**map1;
+  char	*pid;
 }			t_tool;
 
 int	check_help(int, char **);
@@ -64,6 +65,7 @@ void		send(int, char *);
 void		get_posi(int);
 void		tour(int, char **, char **);
 void		P2pid(int, siginfo_t*, void*);
+void		connexion(int, char**, char**, t_tool*);
 
 int		  globale[8];
 
