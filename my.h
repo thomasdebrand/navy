@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Dec 12 09:54:55 2016 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 11:30:06 2017 Raphael Legrand
+** Last update Fri Feb 17 11:54:41 2017 Raphael Legrand
 */
 
 #include <unistd.h>
@@ -59,12 +59,12 @@ void		none(int);
 char		*get_next_line(int fd);
 void		listenner();
 void		answer(char**);
-void		check(char **, int*);
+void		check(char **);
 void		send(int, char *);
 void		get_posi(int);
 void		tour(int, char **, char **);
 void		P2pid(int, siginfo_t*, void*);
 
-int		  globale[6];
+int		  globale[8];
 
 #endif /* MY_H_ */

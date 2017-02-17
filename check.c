@@ -5,12 +5,12 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Feb  4 16:11:43 2017 Raphael Legrand
-** Last update Fri Feb 17 11:38:32 2017 Raphael Legrand
+** Last update Fri Feb 17 13:10:50 2017 Raphael Legrand
 */
 
 #include "my.h"
 
-void				check(char** posi, int *c)
+void				check(char** posi)
 {
   int				pos_l = globale[5] - 49;
   int				pos_c = globale[4] - 65;
@@ -23,7 +23,7 @@ void				check(char** posi, int *c)
       if (globale[3] == 0)
 	kill(globale[2], 10);
       posi[pos_l][pos_c] = 'x';
-      c--;
+      globale[7]--;
     }
   else
     {
@@ -46,6 +46,7 @@ void		hit(int sig)
 {
   my_putstr(":  hit\n\n");
   globale[6] = 2;
+  globale[8]++;
 
 }
 
