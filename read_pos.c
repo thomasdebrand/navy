@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 14:29:57 2017 Raphael Legrand
+** Last update Fri Feb 17 15:16:14 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -22,7 +22,7 @@ int	folder_to_array(int ac, char **av, t_tool *tool)
 
   if (ac == 3)
     k = 2;
-  if ((f = open(av[k], 'r')) == -1)
+  if ((f = open(av[k], O_RDONLY)) == -1)
     {
       my_putstr("ERROR, no such file.\n");
       return (84);
