@@ -5,7 +5,7 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Wed Feb  1 14:15:59 2017 Raphael Legrand
-** Last update Thu Feb 16 11:21:00 2017 Raphael Legrand
+** Last update Fri Feb 17 11:35:49 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -27,6 +27,7 @@ void		get_posi(int ac)
     {
       my_putstr("wrong position\n");
       get_posi(ac);
+      return ;
     }
 }
 

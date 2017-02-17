@@ -5,14 +5,16 @@
 ** Login   <raphael.legrand@epitech.eu@epitech.eu>
 **
 ** Started on  Fri Feb  3 11:32:34 2017 Raphael Legrand
-** Last update Thu Feb 16 11:14:09 2017 Raphael Legrand
+** Last update Fri Feb 17 11:29:54 2017 Raphael Legrand
 */
 
 #include "my.h"
 
 void		tour(int ac, char **map, char **map_e)
 {
-  while (1)
+  int		*c = 14;
+
+  while (c != 0)
     {
       my_putchar('\n');
       print_the_map(map);
@@ -22,12 +24,12 @@ void		tour(int ac, char **map, char **map_e)
 	  get_posi(ac);
 	  answer(map_e);
 	  listenner();
-	  check(map);
+	  check(map, c);
 	}
       if (ac == 3)
 	{
 	  listenner();
-	  check(map);
+	  check(map, c);
 	  get_posi(ac);
 	  answer(map_e);
 	}
