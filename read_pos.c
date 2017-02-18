@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Sat Feb 18 15:43:22 2017 Thomas DEBRAND PASSARD
+** Last update Sat Feb 18 16:38:07 2017 Thomas DEBRAND PASSARD
 */
 
 #include "my.h"
@@ -101,7 +101,8 @@ int	check_boat_len1(int ac, char **av, t_tool *tool)
 	  i++;
 	}
     }
-  index = tool->pos1[0][0] + tool->pos1[3][0] + tool->pos1[6][0] + tool->pos1[9][0] - 192;
+  index = tool->pos1[0][0] + tool->pos1[3][0] +
+    tool->pos1[6][0] + tool->pos1[9][0] - 192;
   if (index != 14)
     return (84);
   check_boat_len2(ac, av, tool);
@@ -125,9 +126,8 @@ int	check_boat_len2(int ac, char **av, t_tool *tool)
 	}
       value1 = value1 + 48;
       value2 = value2 + 48;
-      if ((value1 == '0' && value2 == '0') || (value1 != '0' && value2 != '0'))
-	return (84);
-      else if ((value1 + 1 != tool->pos1[index][0]) && (value2 + 1 != tool->pos1[index][0]))
+      if ((value1 == '0' && value2 == '0') || (value1 != '0' && value2 != '0') ||
+	  ((value1 + 1 != tool->pos1[index][0]) && (value2 + 1 != tool->pos1[index][0])))
 	return (84);
       index1 += 3;
       index2 += 3;
