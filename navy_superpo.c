@@ -5,12 +5,12 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Thu Feb  2 13:26:10 2017 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 17:02:43 2017 Raphael Legrand
+** Last update Sat Feb 18 16:18:29 2017 Thomas DEBRAND PASSARD
 */
 
 #include "my.h"
 
-void	create_map(int ac, t_tool *tool)
+int	create_map(int ac, t_tool *tool)
 {
   char	**map;
   char	**map_e;
@@ -25,7 +25,8 @@ void	create_map(int ac, t_tool *tool)
       x++;
     }
   full_the_map(ac, map, tool, map_e);
-  put_in_map1(ac, map, tool);
+  if (put_in_map1(ac, map, tool) == 84)
+    return (84);
   connexion(ac, map, map_e, tool);
 }
 

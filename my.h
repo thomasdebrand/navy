@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Dec 12 09:54:55 2016 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 18:58:18 2017 Raphael Legrand
+** Last update Sat Feb 18 16:18:44 2017 Thomas DEBRAND PASSARD
 */
 
 #include <unistd.h>
@@ -39,7 +39,7 @@ int	swap(int, t_tool *);
 int	check_boat_len1(int, char **, t_tool *);
 int	check_boat_len2(int, char **, t_tool *);
 
-void	create_map(int, t_tool *);
+int	create_map(int, t_tool *);
 void	print_the_map(char **);
 void	print_e_map(char **);
 void	full_the_map(int, char **, t_tool *, char **);

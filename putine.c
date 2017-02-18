@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Sat Feb  4 17:06:03 2017 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 17:02:34 2017 Raphael Legrand
+** Last update Sat Feb 18 16:16:08 2017 Thomas DEBRAND PASSARD
 */
 
 #include "my.h"
@@ -24,7 +24,8 @@ int     put_in_map1(int ac, char **map, t_tool *tool)
       tool->value2 = tool->pos1[x + 2][y] - 65;
       tool->value3 = tool->pos1[x + 1][y + 1] - 48;
       tool->value4 = tool->pos1[x + 2][y + 1] - 48;
-      put_in_map2(ac, map, tool, index);
+      if (put_in_map2(ac, map, tool, index) == 84)
+	return (84);
       check++;
       x += 3;
     }
