@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Tue Jan 31 14:19:23 2017 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 16:39:48 2017 Raphael Legrand
+** Last update Sat Feb 18 15:09:20 2017 Raphael Legrand
 */
 
 #include "my.h"
@@ -22,20 +22,19 @@ int	folder_to_array(int ac, char **av, t_tool *tool)
 
   if (ac == 3)
     k = 2;
-  if ((f = open(av[k], O_RDONLY)) == -1)
-    {
+    if ((f = open(av[k], O_RDONLY)) == -1) {
       my_putstr("ERROR, no such file.\n");
       return (84);
     }
-  else
-    {
-      array = malloc(sizeof(char) * 28);
-      while ((j = read(f, buff, 1)) != 0)
-	{
+    else {
+      array = malloc(sizeof(char) * 33);
+	while ((j = read(f, buff, 1)) != 0) {
 	  array[index] = buff[0];
 	  index++;
 	}
-    }
+}
+  if (index != 32)
+    return (84);
   array_to_wordtab(ac, av, array, tool);
 }
 

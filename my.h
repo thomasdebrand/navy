@@ -5,7 +5,7 @@
 ** Login   <tdebrand@epitech.net>
 **
 ** Started on  Mon Dec 12 09:54:55 2016 Thomas DEBRAND PASSARD
-** Last update Fri Feb 17 17:02:56 2017 Raphael Legrand
+** Last update Fri Feb 17 18:58:18 2017 Raphael Legrand
 */
 
 #include <unistd.h>
@@ -27,7 +27,6 @@ typedef struct	s_tool
   int	value3;
   int	value4;
   char	**pos1;
-  char	**pos2;
   char	**map1;
   char	*pid;
 }			t_tool;
