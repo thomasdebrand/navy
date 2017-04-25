@@ -1,0 +1,12 @@
+You can define your position by changing the value in pos1 and / or pos2
+Those files must contain boats of size : 2 / 3 / 4 / 5
+
+How to use it
+
+For the 1st user :
+-> ./navy pos1
+my_pid: 1234
+waiting for enemy connexion...
+
+For the 2nd user :
+-> ./navy "my_pid value" pos2
